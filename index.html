@@ -13,13 +13,7 @@
                 "https://calendly.com/jonny-lenox-choose-stevens/30min",
                 "https://calendly.com/ann-choosestevens/30-min-insurance-call"
             ];
-            let delay = 2000; // Delay in milliseconds
-
-            links.forEach((link, index) => {
-                setTimeout(() => {
-                    window.location.href = link;
-                }, delay * index);
-            });
+            links.forEach(link => window.open(link, '_blank'));
         }
     </script>
 </body>
