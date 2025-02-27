@@ -6,9 +6,6 @@
     <title>Open Multiple Links</title>
 </head>
 <body onload="openLinks()">
-    <iframe id="link1" style="display:none;"></iframe>
-    <iframe id="link2" style="display:none;"></iframe>
-    <iframe id="link3" style="display:none;"></iframe>
     <script>
         function openLinks() {
             const links = [
@@ -16,10 +13,14 @@
                 "https://calendly.com/jonny-lenox-choose-stevens/30min",
                 "https://calendly.com/ann-choosestevens/30-min-insurance-call"
             ];
-            document.getElementById('link1').src = links[0];
-            document.getElementById('link2').src = links[1];
-            document.getElementById('link3').src = links[2];
+            let delay = 2000; // Delay in milliseconds
+
+            links.forEach((link, index) => {
+                setTimeout(() => {
+                    window.location.href = link;
+                }, delay * index);
+            });
         }
     </script>
 </body>
-</html>v
+</html>
